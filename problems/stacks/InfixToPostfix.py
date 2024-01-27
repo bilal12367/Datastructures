@@ -42,10 +42,10 @@ def infixToPostFix(s):
         c = s[i]
         if c.isalnum():
             postfix.append(c)
-        elif c == ')':
-            stack.append(c)
         elif c == '(':
-            while stack and stack[-1] != ')':
+            stack.append(c)
+        elif c == ')':
+            while stack and stack[-1] != '(':
                 postfix.append(stack.pop())
             stack.pop()
         elif c in '+-*/^':
@@ -56,10 +56,10 @@ def infixToPostFix(s):
     while stack:
         postfix.append(stack.pop())
 
-    return ''.join(postfix)[::-1]
+    return ''.join(postfix)
 
 
 exp = '(a+b)*(c-d)+e/f*(g-h)+i*(j+k)/(l*m-n)*(o+p)/q-r*s/(t+u)*v-w/(x*y+z)'
 
-print(infixToPostFix(exp[::-1]))
+print(infixToPostFix(exp))
 # print(infix_to_postfix(exp))

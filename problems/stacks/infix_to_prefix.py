@@ -11,7 +11,6 @@ def infix_to_prefix(infix_expr):
 
     stack = []
     prefix = []
-
     for char in reverse_string(infix_expr):
         if char.isalnum():  # Operand
             prefix.append(char)
@@ -31,8 +30,9 @@ def infix_to_prefix(infix_expr):
 
     return ''.join(reverse_string(prefix))
 
+
 # Example usage:
-infix_expr = "a + b * c - d / e"
+infix_expr = "(a+b)*(c-d)+e/f*(g-h)+i*(j+k)/(l*m-n)*(o+p)/q-r*s/(t+u)*v-w/(x*y+z)"
 prefix_expr = infix_to_prefix(infix_expr)
 print(f"Infix Expression: {infix_expr}")
 print(f"Prefix Expression: {prefix_expr}")

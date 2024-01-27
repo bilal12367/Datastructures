@@ -1,0 +1,18 @@
+arr = [9, -3, 3, -1, 6, -5]
+
+def longestSubarryZeroSum(arr, n, subset, max1):
+    if n == 0:
+        return max1
+    
+    if sum(subset) == 0:
+        if len(subset) > max1:
+            print(subset)
+            max1 = len(subset)
+    
+    inc = longestSubarryZeroSum(arr, n - 1, subset + [arr[n-1]],max1)
+    exc = longestSubarryZeroSum(arr, n - 1, subset,max1)
+    return max([inc, exc])
+
+
+
+print(longestSubarryZeroSum(arr, len(arr), [], 0))

@@ -1,7 +1,7 @@
 
 # Should remove the overlapping Intervals
 
-# Example 1: 
+# Example 1:
 
 # Input: intervals=[[1,3],[2,6],[8,10],[15,18]]
 
@@ -18,23 +18,23 @@
 
 # Explanation: Since intervals [1,4] and [4,5] are overlapping we can merge them to form [1,5].
 
-intervals=[[1,2], [3, 5], [4, 6], [5, 7], [8,10], [11, 15]]
+def mergeIntervals(intervals):
+    intervals.sort(key=lambda x: x[0])
+    result = []
+    for interval in intervals:
+        if not result or result[-1][1] < interval[0]:
+            result.append(interval)
+        else:
+            result[-1][1] = max(result[-1][1], interval[1])
+    return result
 
-resArr = []
-i = 1
-while(i<len(intervals)):
-    current = intervals[i]
-    prev = intervals[i-1]
-    if(prev[len(prev) - 1] < current[0]):
-        intervals[i - 1] = prev
-        if i == len(intervals) - 1:
-            intervals[i] = current
-    else:
-        intervals[i-1] = ([prev[0], current[len(prev)-1]])
-        del intervals[i]
-        i -= 1
-    i += 1
-    
 
-print(intervals)
-    
+intervals = [[1, 2], [3, 5], [4, 6], [5, 7], [8, 10], [11, 15]]
+# intervals=[[1,4],[0,4]]
+# intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+# intervals = [[1, 4], [0, 1]]
+# intervals = [[1,4],[2,3]]
+# intervals = [[1,4],[4,5]]
+
+
+print(mergeIntervals(intervals))

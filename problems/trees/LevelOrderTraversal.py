@@ -5,7 +5,7 @@ class Node:
 
     # A utility function to create a new node
     def __init__(self, key):
-        self.data = key
+        self.val = key
         self.left = None
         self.right = None
 
@@ -33,7 +33,10 @@ def printLevelOrder(node):
     # Level Order
     # for i in range(1, h+1):
     # ReverseLevel Order
-    for i in range(h+1, 0, -1):
+    # for i in range(h+1, 0, -1):
+    for i in range(1, h+1):
+        print("")
+        print("Level: ",i, end=" ||        ")
         printCurrentLevel(node, i)
 
 
@@ -41,7 +44,7 @@ def printCurrentLevel(node, level):
     if node is None:
         return
     if level == 1:
-        print(node.data, end=' ')
+        print(node.val, end=' ')
     elif level > 1:
         printCurrentLevel(node.left, level-1)
         printCurrentLevel(node.right, level-1)

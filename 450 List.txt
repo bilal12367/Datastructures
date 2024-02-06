@@ -48,8 +48,9 @@ Matrix	Find a specific pair in matrix	<->
 Matrix	Rotate matrix by 90 degrees	<->
 Matrix	Kth smallest element in a row-cpumn wise sorted matrix	<->
 Matrix	Common elements in all rows of a given matrix	<->
-		
-		
+
+
+Level - I		
 String	Reverse a String	<->
 String	Check whether a String is Palindrome or not	<->
 String	Find Duplicate characters in a string	<->
@@ -65,6 +66,8 @@ String	Split the Binary string into two substring with equal 0’s and 1’s	<->
 String	Word Wrap Problem [VERY IMP].	<->
 String	EDIT Distance [Very Imp]	<->
 String	Find next greater number with same set of digits. [Very Very IMP]	<->
+
+Level - II
 String	Balanced Parenthesis problem.[Imp]	<->
 String	Word break Problem[ Very Imp]	<->
 String	Rabin Karp Algo	<->
@@ -77,6 +80,8 @@ String	Search a Word in a 2D Grid of characters.	<->
 String	Boyer Moore Algorithm for Pattern Searching.	<->
 String	Converting Roman Numerals to Decimal	<->
 String	Longest Common Prefix	<->
+
+Level - III
 String	Number of flips to make binary string alternate	<->
 String	Find the first repeated word in string.	<->
 String	Minimum number of swaps for bracket balancing.	<->

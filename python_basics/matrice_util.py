@@ -1,9 +1,9 @@
 import random as ran
 
-def generate_arr(m):
+def generate_arr(m,n):
     arr = []
     for i in range(m):
-        arr.append(ran.randint(1,1000))
+        arr.append(ran.randint(0,n))
     return arr
 
 

@@ -27,8 +27,8 @@ def nextPermutation2(arr):
     for i in range(len(arr) - 1, -1, -1):
         if arr[i - 1] < arr[i]:
             ind = i - 1
-            break;
-
+            break
+    
     if ind == -1: return arr[::-1]
 
     for i in range(len(arr) - 1, -1, -1):
@@ -39,4 +39,21 @@ def nextPermutation2(arr):
     return arr
     
 
-print(nextPermutation2(arr))
+def nextPerm(arr):
+    n = len(arr) - 1
+    i = n - 1
+    while i >= 0 and arr[i] >= arr[i + 1]:
+        i -= 1
+    if i >=0:
+        j = n
+        while j >= 0 and arr[j] <= arr[i]:
+            j -= 1
+        arr[j],arr[i] = arr[i], arr[j]
+        arr[i+1:] = reversed(arr[i+1:])
+    else:
+        arr.reverse()
+    
+    return arr
+        
+
+print(nextPerm(arr))

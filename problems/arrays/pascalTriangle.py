@@ -21,4 +21,16 @@ def pascalTriangle(numRows):
         res.append(list)
     return res
 
-print(pascalTriangle(8))
+
+def pascalTrianglePrc(numRows):
+    l1 = [[1]]
+    for i in range(numRows):
+        l2 = []
+        l2.append(1)
+        for j in range(1, len(l1[i - 1])):
+            l2.append(l1[i - 1][j - 1] + l1[i - 1][j])
+        l2.append(1)
+        l1.append(l2)
+    return l1
+
+print(pascalTrianglePrc(8))

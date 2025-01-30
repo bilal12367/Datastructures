@@ -1,7 +1,7 @@
 import random
 arr =[]
-for i in range(0,10000):
-    arr.append(random.randint(0,20000))
+for i in range(0,100):
+    arr.append(random.randint(0,200))
 
 def bubbleSort(arr):
     isSwapped = True
@@ -13,6 +13,15 @@ def bubbleSort(arr):
                 isSwapped = True
     return arr
 
-
-print(bubbleSort(arr))
+def bubbleSort1(arr):
+    isSwap = True
+    n = len(arr)
+    while(isSwap):
+        isSwap = False
+        for i in range(n - 1):
+            if arr[i] > arr[i + 1]:
+                arr[i],arr[i + 1] = arr[i + 1],arr[i]
+                isSwap = True
+    return arr
+print(bubbleSort1(arr))
         

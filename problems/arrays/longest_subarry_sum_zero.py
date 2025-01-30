@@ -13,6 +13,20 @@ def longestSubarryZeroSum(arr, n, subset, max1):
     exc = longestSubarryZeroSum(arr, n - 1, subset,max1)
     return max([inc, exc])
 
+def test(A):
+    n = len(A)
+    mpp = {}
+    sum = maxi = 0
+    for i in range(n):
+        sum += A[i]
+        if sum == 0:
+            maxi = i + 1
+        else:
+            if sum in mpp:
+                maxi = max(maxi, i - mpp[sum])
+            else:
+                mpp[sum] = i
+    return maxi
 
-
-print(longestSubarryZeroSum(arr, len(arr), [], 0))
+print(test(arr))
+# print(longestSubarryZeroSum(arr, len(arr), [], 0))
